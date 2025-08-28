@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Quiz</title>
+    
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div id="quiz-container" class="quiz-container">
+        <div id="question-container" class="question-container">
+            <p id="question-text" class="question-text"></p>
+            <div class="answers">
+                <button class="answer-btn" onclick="checkAnswer(1)">Antwort 1</button>
+                <button class="answer-btn" onclick="checkAnswer(2)">Antwort 2</button>
+                <button class="answer-btn" onclick="checkAnswer(3)">Antwort 3</button>
+                <button class="answer-btn" onclick="checkAnswer(4)">Antwort 4</button>
+            </div>
+        </div>
+        <div id="feedback" class="feedback"></div>
+        <button id="next-btn" class="next-btn" onclick="nextQuestion()">Nächste Frage</button> 
+    </div>
+    <div id="result-container" class="result-container" style="display: none;">
+        <p id="score-text"></p>
+      
+        <img id="medal-image" src="" alt="Medaille" class="medal" />
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design-Vorschläge zur Fake News Erkennung</title>
+    <link rel="stylesheet" href="design.css">  
+</head>
+<body>
+    <header>
+        <h1>Design suggestions for fake news detection</h1>
+    </header>
+     <section id="intro">
+        <h2>Help improve fake news detection</h2>
+        <p>This is an interactive design demo created for a bachelor thesis. Please take a moment to test the features shown below, such as verified post indicators, fake-news checklists, and warning systems.</p> 
+        <p>Once you’ve explored the examples, click the button below to share your feedback in a short, anonymous survey. It only takes 3 minutes.</p>
+        <a class="survey-btn" href="https://forms.gle/dein-umfragelink" target="_blank">Start Survey</a>
+      </section>
+       </section>
+ <section id="design-proposals">
+        <h2>Design suggestions:</h2>
+        <div class="verified-post">
+            <div class="verified-box">
+                <div class="profile">
+                    <img src="Images/profile-pic.jpeg" alt="Profilbild" class="profile-pic">
+                    <div class="user-info">
+                        <p class="user-name">Alex Weibert</p>
+                        <p class="post-time">2 hours ago</p>
+                    </div>
+                </div>
+                 <p class="post-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                  <div class="verification">
+                    <span class="checkmark">✔</span>
+                    <p class="verified-text">verified</p>
+                    <button class="source-btn" onclick="showPopup('popup-verified')">learn more</button>
+                </div>
+            </div>
+        </div>
+        <div id="popup-verified" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup-verified')">&times;</span>
+                <h2>This post is verified!</h2>
+                <p>the article has been checked and confirmed by a trustworthy source.</p>
+            </div>
+        </div>
+    </section>
+    <div class="non-verified-post">
+        <div class="non-verified-box">
+         
+            <div class="profile">
+                <img src="Images/profile-pic1.jpeg" alt="Profilbild" class="profile-pic">
+                <div class="user-info">
+                    <p class="user-name">Anissa Bonk</p>
+                    <p class="post-time">4 hours ago</p>
+                </div>
+            </div>
+            <p class="post-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
+            <div class="verification non-verified">
+                <span class="checkmark">✖</span>
+                <p class="verified-text">not verified</p>
+                <button class="source-btn" onclick="showPopup('popup-non-verified')">learn more</button>
+            </div>
+        </div>
+    </div>
+    <div id="popup-non-verified" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('popup-non-verified')">&times;</span>
+            <h2>This post is not verified!</h2>
+            <p>This article has not been reviewed by a trusted source and may contain misinformation.</p>
+        </div>
+    </div>
+<div class="source-post">
+    <div class="source-box">
+        
+        <div class="profile">
+            <img src="Images/profile-pic2.jpeg" alt="Profilbild" class="profile-pic">
+            <div class="user-info">
+                <p class="user-name">Luisa Putnik</p>
+                <p class="post-time">2 hours ago</p>
+            </div>
+        </div>
+        <p class="post-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+        <div class="sources">
+            <button class="source-btn" onclick="showSourcePopup()">View sources</button>
+        </div>
+    </div>
+</div>
+<div id="popup-sources" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('popup-sources')">&times;</span>
+        <h2>Sources of the article</h2>
+        <ul>
+        <li>Loremipsumdolorsit.org </li>
+        <li>Loremipsumdolorsit.net </li>
+        <li>Loremipumdolorsit.com  </li>
+        </ul>
+    </div>
+</div>
+<div class="checklist-post">
+    <div class="checklist-box">
+        <div class="profile">
+            <img src="Images/profile-pic3.jpeg" alt="Profilbild" class="profile-pic">
+            <div class="user-info">
+                <p class="user-name">Sara Muster</p>
+                <p class="post-time">2 hours ago</p>
+            </div>
+        </div>
+        <p class="post-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+
+    
+        <button class="quiz-btn" onclick="showQuizPopup()">Start Fake News Check</button>
+    </div>
+</div>
+<div id="quiz-popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('quiz-popup')">&times;</span>
+        <h2>Fake News Check</h2>
+        <p>Please check off what this post shows:</p>
+        <form id="quiz-form">
+            <div class="quiz-question">
+                <label><input type="checkbox" name="q1"> Is there a source for the information?</label><br>
+            </div>
+
+            <div class="quiz-question">
+                <label><input type="checkbox" name="q2"> Is the information presented emotionally?</label><br>
+            </div>
+
+            <div class="quiz-question">
+                <label><input type="checkbox" name="q3"> Is there a lack of evidence or details to support the claims?</label><br>
+            </div>
+
+            <div class="quiz-question">
+                <label><input type="checkbox" name="q4"> Is the article from an unknown or untrustworthy source?</label><br>
+            </div>
+
+            <div class="quiz-question">
+                <label><input type="checkbox" name="q5"> Is the contribution supported by exaggerated or dramatic statements?</label><br>
+            </div>
+
+            <button type="button" onclick="submitQuiz()">Complete review</button>
+        </form>
+        <!-- Ergebnisbereich -->
+        <div id="quiz-result" style="display: none;">
+            <h3>Result:</h3>
+            <p id="result-text"></p>
+        </div>
+    </div>
+</div>
+<div class="checklist-post">
+    <div class="checklist-box">
+       
+        <div class="profile">
+            <img src="Images/profile-pic5.jpeg" alt="Profilbild" class="profile-pic">
+            <div class="user-info">
+                <p class="user-name">Max Mustermann</p>
+                <p class="post-time">2 hours ago</p>
+            </div>
+        </div>
+        <p class="post-text">„Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.“</p>
+
+        <div class="post-icons">
+            <div class="icon" onclick="showPopup('popup-source')">
+                ⚠️
+            </div>
+            <div class="icon" onclick="showPopup('popup-emotion')">
+                
+            </div>
+        </div>
+<div id="popup-source" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('popup-source')">&times;</span>
+        <h2>Missing source</h2>
+        <p>Das Fehlen einer Quelle in einem Beitrag kann darauf hindeuten, dass die Informationen möglicherweise nicht überprüfbar oder nicht vertrauenswürdig sind.</p>
+    </div>
+</div>
+<div id="popup-emotion" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('popup-emotion')">&times;</span>
+        <h2>emotional tone</h2>
+        <p>An emotional tone or dramatic language can be used to influence the reader and distract them from objective facts.</p>
+    </div>
+</div>
+<div class="post-card">
+    <div class="post-header">
+      <img src="Images/profile-pic6.jpeg" alt="Profilbild" class="profile-pic">
+      <div class="user-info">
+        <p class="user-name">Max Mustermann</p>
+        <p class="post-time">2 hours ago</p>
+      </div>
+     
+      <div class="trust-badge" data-score="4">
+        ⭐⭐⭐⭐☆
+        <span class="tooltip">
+          Trustworthiness: 4/5<br>
+          Source: “sed diam nonumy”, no contradictory facts found
+        </span>
+      </div>
+    </div>
+
+    <p class="post-text">
+      „Lorem ipsum dolor sit amet, consetetur sadipscing elitr.!“
+    </p>
+  </div>
+
+  <div class="post-card">
+    <div class="post-header">
+      <img src="Images/profile-pic7.jpeg" alt="Profilbild" class="profile-pic">
+      <div class="user-info">
+        <p class="user-name">Anna Beispiel</p>
+        <p class="post-time">1 hour ago</p>
+      </div>
+    </div>
+
+    <p class="post-text">
+      Lorem <span class="trusted" data-tooltip="Source: Nature Journal – peer-reviewed study">ipsum dolor</span>  consetetur sadipscing elitr sed diam voluptua. 
+      lorem <span class="uncertain" data-tooltip="Source unclear - check more closely">dolor sit amet</span>, dolor sit amet dolor sit amet 
+      dolore magna aliquyam erat <span class="unverified" data-tooltip="Unconfirmed source: No journal could be found">magna aliquyam erat</span>, dolore magna aliquyam erat.
+    </p>
+  </div>
+ 
+  <div class="post-card" id="post-1">
+    <div class="post-header">
+      <img src="Images/profile-pic8.jpeg" alt="Profilbild" class="profile-pic">
+      <div class="user-info">
+        <p class="user-name">Lisa Muster</p>
+        <p class="post-time">3 hours ago</p>
+      </div>
+ 
+      <div class="flag-container">
+        <span class="flag-icon" onclick="toggleFlag(1)">⚠️</span>
+        <span class="flag-count" id="flag-count-1">0</span>
+        <span class="flag-tooltip" id="flag-tooltip-1">
+          Several users have expressed concerns. Check the source.
+        </span>
+      </div>
+    </div>
+
+    <p class="post-text">
+      „Breaking News: ut labore et dolore magna aliquyam erat, sed diam voluptua!“
+    </p>
+  </div>
+
+<div class="post-card" id="post-1">
+    <div class="post-header">
+      <img src="Images/profile.-pic9.jpeg" alt="Profilbild" class="profile-pic">
+      <div class="user-info">
+        <p class="user-name">Eva Beispiel</p>
+        <p class="post-time">1 hour ago</p>
+      </div>
+      <div class="traffic-light" data-status="yellow">
+        <div class="light green"></div>
+        <div class="light yellow"></div>
+        <div class="light red"></div>
+        <div class="tl-tooltip">
+          <strong>Status:</strong> View with caution<br>
+          Reason: Source partly verified, partly unclear
+        </div>
+      </div>
+    </div>
+
+    <p class="post-text">
+      „et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.“
+    </p>
+  </div>
+
+  <div class="post-card" id="post-1">
+    <div class="post-header">
+      <img src="Images/profile-pic10.jpeg" alt="Profilbild" class="profile-pic">
+      <div class="user-info">
+        <p class="user-name">Tom Beispiel</p>
+        <p class="post-time">2 hours ago</p>
+      </div>
+    </div>
+
+    <p class="post-text">
+      „cusam et justo duo dolores et ea rebum. Stet clita kasd.“  
+    </p>
+
+
+    <div class="image-container">
+      <img src="Images/Beitrag.jpeg" alt="Beitragsbild" class="post-image flagged-image">
+      <span class="img-check-icon" onclick="showImgTooltip(1)">🔍</span>
+    </div>
+
+
+    <div class="img-tooltip" id="img-tooltip-1">
+      <span class="close" onclick="hideImgTooltip(1)">&times;</span>
+      <h3>Image depth check:</h3>
+      <p>This image has already been found in another context (2021, source: example website).</p>
+      <p><a href="https://www.google.com/searchbyimage?image_url=example-image.jpg" target="_blank">Look it up on Google</a></p>
+    </div>
+  </div>
+
+<div class="post-card" id="post-1">
+    <div class="post-header">
+      <img src="Images/profile-pic11.jpeg" alt="Profilbild" class="profile-pic">
+      <div class="user-info">
+        <p class="user-name">Laura Beispiel</p>
+        <p class="post-time">30 minutes ago</p>
+      </div>
+    </div>
+
+    <p class="post-text">
+      „Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur.“
+    </p>
+
+    <div class="trust-meter" data-percentage="60">
+      <svg class="meter-ring" width="60" height="60">
+        <circle class="ring-bg" cx="30" cy="30" r="28"></circle>
+        <circle class="ring-fg" cx="30" cy="30" r="28"></circle>
+      </svg>
+      <span class="trust-text">0%</span>
+      <div class="tm-tooltip">
+        <strong>trustworthy: 60%</strong><br>
+        40% Source partly unclear<br>
+        20% emotional tone
+      </div>
+    </div>
+  </div>
+ 
+  <div class="post-card" id="post-1">
+    <div class="post-header">
+      <img src="Images/profile-pic12.jpeg" alt="Profilbild" class="profile-pic">
+      <div class="user-info">
+        <p class="user-name">Mark Mustermann</p>
+        <p class="post-time">5 hours ago</p>
+      </div>
+    </div>
+
+    <p class="post-text">
+      „sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua..“  
+    </p>
+
+    
+    <button class="deep-dive-toggle" onclick="toggleDeepDive(1)">
+      more details…
+    </button>
+
+    
+    <div class="deep-dive" id="deep-dive-1">
+      <h3>Deep Dive: Fact check and sources</h3>
+
+    
+      <section class="deep-section">
+        <h4>Fact check summary</h4>
+        <p>
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+           sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+        </p>
+      </section>
+
+      
+      <section class="deep-section">
+        <h4>Comparison: Claim vs. facts</h4>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Claim</th>
+              <th>Fact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>„sed diam nonumy eirmod tempor invidunt 30 %“</td>
+              <td>sed diam nonumy eirmod tempor invidunt; sed tempor invidunt 5 %</td>
+            </tr>
+            <tr>
+              <td>„Studie von renommiertem Institut“</td>
+              <td>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,</td>
+            </tr>
+            <tr>
+              <td>„Lorem ipsum dolor sit amet, > 1000“</td>
+              <td> Lorem ipsum dolor sit amet, 80 % lorem</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="deep-section">
+        <h4>Further resources</h4>
+        <ul class="resource-list">
+          <li><a href="https://www.ncbi.nlm.nih.gov/pubmed/123456" target="_blank">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,(2019)</a></li>
+          <li><a href="https://www.example-faktencheck.org/zitronenwasser" target="_blank">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,</a></li>
+          <li><a href="https://www.worldnutritionjournal.com/article/xyz" target="_blank">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, (2021)</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+    <script src="design.js"></script>
+</body>
+</html>
+
